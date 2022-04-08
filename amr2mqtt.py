@@ -7,6 +7,10 @@ import paho.mqtt.publish as publish
 import settings
 import json
 
+
+print("Starting")
+print("Meter IDs", settings.WATCHED_METERS)
+
 # uses signal to shutdown and hard kill opened processes and self
 def shutdown(signum, frame):
     subprocess.call('/usr/bin/pkill -9 rtlamr', shell=True)
@@ -43,10 +47,12 @@ rtlamr = subprocess.Popen([settings.RTLAMR,
     '-format=json'], stdout=subprocess.PIPE)
 
 while True:
+        print("Main loop")
 
     #try:
         # rtlamr's readline returns byte list, remove whitespace and convert to string
         amrline = rtlamr.stdout.readline().strip().decode()
+        print(amrline)
         # split string on commas
         flds = json.loads(amrline)
 
