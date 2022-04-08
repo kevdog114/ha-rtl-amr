@@ -44,7 +44,8 @@ time.sleep(5)
 # start the rtlamr program.
 rtlamr = subprocess.Popen([settings.RTLAMR,
     '-msgtype=all',
-    '-format=json'], stdout=subprocess.PIPE)
+    '-format=json',
+    '-symbolLength=' + settings.SYMBOL_LENGTH], stdout=subprocess.PIPE)
 
 while True:
         print("Main loop")
@@ -52,7 +53,6 @@ while True:
     #try:
         # rtlamr's readline returns byte list, remove whitespace and convert to string
         amrline = rtlamr.stdout.readline().strip().decode()
-        print(amrline)
         # split string on commas
         flds = json.loads(amrline)
 
