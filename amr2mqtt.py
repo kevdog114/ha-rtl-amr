@@ -45,7 +45,7 @@ time.sleep(5)
 rtlamr = subprocess.Popen([settings.RTLAMR,
     '-msgtype=all',
     '-format=json',
-    '-symbolLength=' + settings.SYMBOL_LENGTH], stdout=subprocess.PIPE)
+    '-symbollength=' + settings.SYMBOL_LENGTH], stdout=subprocess.PIPE)
 
 while True:
         print("Main loop")
