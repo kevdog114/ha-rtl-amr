@@ -52,7 +52,7 @@ MQTT_USER = os.environ.get('MQTT_USER', '')
 MQTT_PASSWORD = os.environ.get('MQTT_PASSWORD', '')
 SYMBOL_LENGTH = os.environ.get('SYMBOL_LENGTH', '72')
 MSG_TYPE = os.environ.get('MSG_TYPE', 'all')
-LOG_ALL = os.environ.get('LOG_ALL', 'false)
+LOG_ALL = os.environ.get('LOG_ALL', 'false')
 
 # path to rtlamr
 RTLAMR = '/root/go/bin/rtlamr'
