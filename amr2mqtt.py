@@ -43,7 +43,7 @@ time.sleep(5)
 
 # start the rtlamr program.
 rtlamr = subprocess.Popen([settings.RTLAMR,
-    '-msgtype=all',
+    '-msgtype=' + settings.MSG_TYPE,
     '-format=json',
     '-symbollength=' + settings.SYMBOL_LENGTH], stdout=subprocess.PIPE)
 
@@ -55,6 +55,9 @@ while True:
         amrline = rtlamr.stdout.readline().strip().decode()
         # split string on commas
         flds = json.loads(amrline)
+
+        if settings.LOG_ALL == 'true':
+            print(amrline)
 
         deviceId = 0
         consumption = 0
