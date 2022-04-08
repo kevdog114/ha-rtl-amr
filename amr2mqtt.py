@@ -44,7 +44,7 @@ rtlamr = subprocess.Popen([settings.RTLAMR,
 
 while True:
 
-    try:
+    #try:
         # rtlamr's readline returns byte list, remove whitespace and convert to string
         amrline = rtlamr.stdout.readline().strip().decode()
         # split string on commas
@@ -71,5 +71,5 @@ while True:
             '%s' % (consumption)
         )
 
-    except:
-        time.sleep(2)
+    #except:
+    #    time.sleep(2)
